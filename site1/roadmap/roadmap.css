@@ -1,0 +1,195 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ▼▼▼ 共通パーツ (idea.cssなどからコピー) ▼▼▼ --- */
+/* (他のCSSファイルからヘッダーとフッターのスタイルをここにコピーしてください) */
+/* ヘッダーナビゲーション */
+.header-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.719); backdrop-filter: blur(10px); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+.logo-container { display: flex; align-items: center; text-decoration: none; }
+.logo-icon { height: 40px; margin-right: 15px; }
+.logo-text { font-weight: bold; font-size: 1.5em; color: #ffffff; }
+.header-nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+.header-nav ul a { color: #ffffff; text-decoration: none; font-weight: bold; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: border-color 0.3s; }
+.header-nav ul a:hover { border-bottom-color: rgba(255, 255, 255, 0.5); }
+.header-nav ul a.active { border-bottom-color: #ffffff; }
+/* フッター */
+#footer { background-color: #1a1a1a; color: #ccc; padding: 50px 50px; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo .logo-icon { height: 40px; margin-right: 15px; }
+.footer-logo .logo-text { font-weight: bold; font-size: 1.5em; color: #ffffff; }
+.footer-right-content { display: flex; gap: 60px; flex-wrap: wrap; }
+.footer-column { min-width: 150px; }
+.footer-column h4 { color: white; margin-top: 0; margin-bottom: 20px; font-size: 1.1em; }
+.footer-column ul { list-style: none; padding: 0; margin: 0; }
+.footer-column ul li { margin-bottom: 12px; }
+.footer-column ul a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+.footer-column ul a:hover { color: white; }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { display: flex; justify-content: center; align-items: center; width: 35px; height: 35px; border: 1px solid #ccc; border-radius: 50%; color: #ccc; text-decoration: none; transition: all 0.3s; }
+.social-icons a:hover { background-color: #ccc; color: #1a1a1a; }
+/* --- ▲▲▲ ここまで共通パーツ --- */
+
+/* --- ▼▼▼ Roadmapページ専用のスタイル ▼▼▼ --- */
+.roadmap-main {
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.main-title {
+    font-size: 3em;
+    margin-bottom: 60px;
+}
+.roadmap-container {
+    position: relative;
+}
+/* タイムラインの縦線 */
+.roadmap-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #e0e0e0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+/* 奇数番目を左側に配置 */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+/* 偶数番目を右側に配置 */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+/* タイムライン上の丸い点 */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;  /* ← 変更なし */
+    height: 16px; /* ← 変更なし */
+    
+    /* 色の変更 */
+    background: linear-gradient(45deg, #a7d7ff, #ffc4d8); /* ← 水色からピンクへのグラデーション */
+    border: none; /* ← 元のborderは不要なので削除 */
+
+    /* 位置の修正 */
+    top: 28px; /* ← 位置を微調整 */
+    transform: translateY(-50%); /* ← 要素自身の高さの半分だけ上にずらし、垂直中央に配置 */
+
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 日付の位置も丸に合わせて調整 */
+.timeline-date {
+    font-weight: bold;
+    color: #555;
+    position: absolute;
+
+    /* 位置の修正 */
+    top: 28px; /* ← 丸の位置と合わせる */
+    transform: translateY(-50%); /* ← こちらも垂直中央に配置 */
+}
+.timeline-item:nth-child(odd)::after {
+    right: 0;
+    transform: translate(50%, -50%); /* 自身の幅の半分だけ右に、高さの半分だけ上に移動 */
+}
+.timeline-item:nth-child(even)::after {
+    left: 0;
+    transform: translate(-50%, -50%); /* 自身の幅の半分だけ左に、高さの半分だけ上に移動 */
+}
+.timeline-content {
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+}
+.timeline-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+.timeline-content img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.timeline-content p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #666;
+}
+.timeline-date {
+    font-weight: bold;
+    color: #555;
+    position: absolute;
+    top: 30px;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: right;
+}
+.timeline-item:nth-child(odd) .timeline-date {
+    left: 110%; /* タイムラインを挟んで反対側に配置 */
+    margin-left: 20px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
+}
+.timeline-item:nth-child(even) .timeline-date {
+    right: 110%; /* タイムラインを挟んで反対側に配置 */
+    margin-right: 20px;
+}
+
+/* フェードインアニメーション */
+.fade-in-target {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-target.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .roadmap-container::after { left: 20px; }
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after {
+        left: 12px;
+    }
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+    }
+    .timeline-date {
+        position: static; /* 日付の位置を通常フローに戻す */
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+}
