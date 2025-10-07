@@ -1,0 +1,122 @@
+/* 基本設定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ▼▼▼ 共通パーツ (idea.cssなどからコピー) ▼▼▼ --- */
+/* (他のCSSファイルからヘッダーとフッターのスタイルをここにコピーしてください) */
+/* ヘッダーナビゲーション */
+.header-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.719); backdrop-filter: blur(10px); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+.logo-container { display: flex; align-items: center; text-decoration: none; }
+.logo-icon { height: 40px; margin-right: 15px; }
+.logo-text { font-weight: bold; font-size: 1.5em; color: #ffffff; }
+.header-nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
+.header-nav ul a { color: #ffffff; text-decoration: none; font-weight: bold; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: border-color 0.3s; }
+.header-nav ul a:hover { border-bottom-color: rgba(255, 255, 255, 0.5); }
+.header-nav ul a.active { border-bottom-color: #ffffff; }
+/* フッター */
+#footer { background-color: #1a1a1a; color: #ccc; padding: 50px 50px; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo .logo-icon { height: 40px; margin-right: 15px; }
+.footer-logo .logo-text { font-weight: bold; font-size: 1.5em; color: #ffffff; }
+.footer-right-content { display: flex; gap: 60px; flex-wrap: wrap; }
+.footer-column { min-width: 150px; }
+.footer-column h4 { color: white; margin-top: 0; margin-bottom: 20px; font-size: 1.1em; }
+.footer-column ul { list-style: none; padding: 0; margin: 0; }
+.footer-column ul li { margin-bottom: 12px; }
+.footer-column ul a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+.footer-column ul a:hover { color: white; }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { display: flex; justify-content: center; align-items: center; width: 35px; height: 35px; border: 1px solid #ccc; border-radius: 50%; color: #ccc; text-decoration: none; transition: all 0.3s; }
+.social-icons a:hover { background-color: #ccc; color: #1a1a1a; }
+/* --- ▲▲▲ ここまで共通パーツ --- */
+
+
+/* --- ▼▼▼ Contactページ専用のスタイル ▼▼▼ --- */
+.contact-main {
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.main-title {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+/* フォームの入力欄とテキストエリアの共通スタイル */
+.contact-form input,
+.contact-form textarea {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* 角を少し丸めるスタイルに変更 */
+    font-size: 1em;
+    font-family: inherit; /* bodyのフォントを継承 */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* 入力欄にフォーカスが当たった時のスタイル */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* テキストエリアのサイズ変更を縦方向のみに限定 */
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 15px;
+    border-radius: 30px; /* ボタンは丸いスタイルのまま */
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #333;
+}
+
+.geometric-background {
+    position: absolute;
+    z-index: -1;     
+    width: 2000px;
+    top: -120px;     
+    right: -40px;      
+    opacity: 0.5;
+}
+.geometric-background img {
+    width: 100%;
+    display: block;
+}

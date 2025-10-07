@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Neosphere</title>
+    <!-- 新しく作成するcontact.cssを読み込む -->
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="geometric-background"><img src="back.svg" alt=""></div>
+
+    <!-- 共通のメニューバー -->
+    <nav class="header-nav">
+        <a href="index.html" class="logo-container">
+            <img src="icon.png" alt="Neosphere Icon" class="logo-icon">
+            <span class="logo-text">NEOSPHERE</span>
+        </a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="idea.html">Idea</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <!-- 現在のページなので.activeクラスを付与 -->
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contactページ専用のメインコンテンツ -->
+    <main class="contact-main">
+        <div class="content-wrapper">
+            <h1 class="main-title">Get in Touch</h1>
+            <p class="subtitle">
+                Neosphereに関するご質問、ご意見、ビジネスに関するお問い合わせはこちらからお気軽にご連絡ください。
+            </p>
+
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Message" required rows="5"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- 共通のフッター -->
+    <footer id="footer">
+        <!-- (他のページからフッターの内容をそのままコピーしてください) -->
+        <div class="footer-container">
+            <a href="index.html" class="footer-logo">
+                <img src="icon.png" alt="Neosphere Icon" class="logo-icon">
+                <span class="logo-text">NEOSPHERE</span>
+            </a>
+            <div class="footer-right-content">
+                <div class="footer-column">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="idea.html">Idea</a></li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">I</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 新しく作成するcontact.jsを読み込む -->
+    <script src="contact.js"></script>
+</body>
+</html>
